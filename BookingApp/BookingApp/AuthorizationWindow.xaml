@@ -1,0 +1,63 @@
+<Window x:Class="BookingApp.AuthorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookingApp"
+        mc:Ignorable="d"
+        AllowsTransparency="False"  WindowStyle="ThreeDBorderWindow"
+        Title="AuthorizationWindow" Height="400" Width="500" Background="Transparent" WindowStartupLocation="CenterScreen">
+  <Grid x:Name="MainGrid">
+    <!--<Image Source="/Pictures/Lib2.jpg" Grid.Column="0"/>-->
+    <Border Width="auto" Height="auto" BorderBrush="White" BorderThickness="2">
+      <Border.Background>
+        <LinearGradientBrush>
+          <GradientBrush.GradientStops>
+            <GradientStopCollection>
+              <GradientStop Color="#0c73fe" Offset="0.0"></GradientStop>
+              <GradientStop Color="#0c73fe" Offset="0.5"></GradientStop>
+            </GradientStopCollection>
+          </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+      </Border.Background>
+    </Border>
+
+    <StackPanel Grid.Column="1">
+      <Grid >
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="70"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="70"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="50"/>
+          <RowDefinition Height="50"/>
+          <RowDefinition Height="50"/>
+          <RowDefinition Height="50"/>
+          <RowDefinition Height="50"/>
+          <RowDefinition Height="50"/>
+          <RowDefinition Height="50"/>
+          <RowDefinition Height="50"/>
+          <RowDefinition Height="50"/>
+          <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="NameWind" Margin="5,5,5,5" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" Foreground="White" HorizontalAlignment="Center" FontSize="24" Style="{StaticResource Logo}" >Авторизация</Label>
+        <Label x:Name="LoginLabel" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource LabelText}">Логин</Label>
+        <TextBox x:Name="LoginText" Margin="5,5,5,5" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" Style="{StaticResource BordText}"/>
+        <Label x:Name="PasswordLabel" Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource LabelText}">Пароль</Label>
+        <TextBox x:Name="PasswordText" Margin="5,5,5,5" Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center" Style="{StaticResource BordText}"/>
+
+        <StackPanel Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+
+          <Button x:Name="AuthorizationCommit" Content="Войти"  Cursor="Hand"  Height="35" Width="100" Margin="15,0,15,0" Click="AuthorizationCommit_Click" Style="{StaticResource PrimeButton}" />
+          <Label Content="|"  FontSize="16" FontWeight="Bold"  VerticalContentAlignment="Center"
+                           Foreground="#fafafa"/>
+          <Button x:Name="AboutButton" Content="Отмена" Height="35" Width="100" Margin="15,0,15,0" Cursor="Hand"
+                            Click="AuthorizationRollBack_Click" Foreground="White" Background="#CC0000" HorizontalAlignment="Right" Style="{StaticResource PrimeButton}"/>
+        </StackPanel>
+
+      </Grid>
+    </StackPanel>
+  </Grid>
+
+</Window>

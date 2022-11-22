@@ -1,0 +1,184 @@
+<Application x:Class="BookingApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BookingApp" xmlns:primitives="http://schemas.microsoft.com/netfx/2009/xaml/presentation" xmlns:vsm="http://schemas.microsoft.com/netfx/2007/xaml/presentation"
+             StartupUri="MainWindow.xaml">
+  <Application.Resources>
+    <!--Background="#FFCC33" Foreground="White"-->
+    <Style x:Key="PrimeButton" TargetType="{x:Type Button}">
+      <Setter Property="Control.FontFamily" Value="Roboto" />
+      <Setter Property="Control.Background" Value="#ff6f32" />
+      <Setter Property="Control.Foreground" Value="#FAFAFA" />
+      <Setter Property="Control.FontSize" Value="14" />
+      <Setter Property="Control.FontWeight" Value="Thin"/>
+      <Setter Property="Control.BorderThickness" Value="0"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Button}">
+            <Border CornerRadius="5" Background="{TemplateBinding Background}">
+              <Grid>
+                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+              </Grid>
+            </Border>
+
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#ff6f32" />
+              </Trigger>
+
+              <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#ff6f32" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style x:Key="AdminButton" TargetType="{x:Type Button}">
+      <Setter Property="Control.FontFamily" Value="Roboto" />
+      <Setter Property="Control.Background" Value="#F7D7AE" />
+      <Setter Property="Control.Foreground" Value="#060722" />
+      <Setter Property="Control.FontSize" Value="14" />
+      <Setter Property="Control.FontWeight" Value="Bold"/>
+      <Setter Property="Control.BorderThickness" Value="0"/>
+      <Setter Property="Control.Padding" Value="5, 5, 5, 5"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Button}">
+            <Border CornerRadius="5" Background="{TemplateBinding Background}">
+              <Grid>
+                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+              </Grid>
+            </Border>
+
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFE2BC" />
+              </Trigger>
+
+              <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#DABE9A" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="Logo">
+      <Setter Property="Control.FontSize" Value="24" />
+      <Setter Property="Control.FontWeight" Value="Bold"/>
+      <Setter Property="Control.Foreground" Value="#ff6f32"/>
+    </Style>
+
+    <Style x:Key="LabelLink" TargetType="{x:Type Label}">
+      <Setter Property="Control.FontFamily" Value="Roboto" />
+      <Setter Property="Control.FontSize" Value="24" />
+      <Setter Property="Control.FontWeight" Value="Regular"/>
+      <Setter Property="Control.Background" Value="Transparent" />
+      <Setter Property="Control.BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="LabelText" TargetType="{x:Type Label}">
+      <Setter Property="Control.FontFamily" Value="Roboto" />
+      <Setter Property="Control.FontSize" Value="12" />
+      <Setter Property="Control.FontWeight" Value="Thin"/>
+      <Setter Property="Control.Background" Value="Transparent" />
+      <Setter Property="Control.Foreground" Value="White"/>
+      <Setter Property="Control.BorderThickness" Value="0"/>
+    </Style>
+
+
+
+    <Style x:Key="HeadLink" TargetType="{x:Type Button}">
+      <Setter Property="Control.FontFamily" Value="Roboto" />
+      <Setter Property="Control.FontSize" Value="24" />
+      <Setter Property="Control.FontWeight" Value="Regular"/>
+      <Setter Property="Control.Background" Value="Transparent" />
+      <Setter Property="Control.BorderThickness" Value="0"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Button}">
+            <Border CornerRadius="0" Background="{TemplateBinding Background}">
+              <Grid>
+                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+              </Grid>
+            </Border>
+
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+              </Trigger>
+
+              <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style x:Key="BordText" TargetType="{x:Type TextBox}">
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate >
+            <Border Background="{TemplateBinding Background}" x:Name="Bd" BorderThickness="2" CornerRadius="10" BorderBrush="#ff6f32">
+              <ScrollViewer x:Name="PART_ContentHost" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bd" Property="BorderBrush" Value="#339900"/>
+              </Trigger>
+              <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter TargetName="Bd" Property="BorderBrush" Value="Black"/>
+                <Setter Property="Foreground" Value="Black"/>
+              </Trigger>
+              <Trigger Property="IsKeyboardFocused" Value="False">
+                <Setter Property="Foreground" Value="Black"/>
+              </Trigger>
+              <Trigger Property="Width" Value="Auto">
+                <Setter Property="MinWidth" Value="120"/>
+              </Trigger>
+              <Trigger Property="Height" Value="Auto">
+                <Setter Property="MinHeight" Value="27"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style x:Key="BordPassText" TargetType="{x:Type PasswordBox}">
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate >
+            <Border Background="{TemplateBinding Background}" x:Name="Bd" BorderThickness="2" CornerRadius="10" BorderBrush="#ff6f32">
+              <ScrollViewer x:Name="PART_ContentHost" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bd" Property="BorderBrush" Value="#339900"/>
+              </Trigger>
+              <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter TargetName="Bd" Property="BorderBrush" Value="#339900"/>
+                <Setter Property="Foreground" Value="Black"/>
+              </Trigger>
+              <Trigger Property="IsKeyboardFocused" Value="False">
+                <Setter Property="Foreground" Value="Black"/>
+              </Trigger>
+              <Trigger Property="Width" Value="Auto">
+                <Setter Property="MinWidth" Value="120"/>
+              </Trigger>
+              <Trigger Property="Height" Value="Auto">
+                <Setter Property="MinHeight" Value="27"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </Application.Resources>
+</Application>

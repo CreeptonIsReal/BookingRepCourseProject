@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище BookingModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BOOKING">
+    <Key>
+      <PropertyRef Name="BOOKING_ID" />
+    </Key>
+    <Property Name="BOOKING_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CLIENT_ID" Type="int" />
+    <Property Name="ROUTE_ID" Type="int" />
+    <Property Name="COMPANY_ID" Type="int" />
+    <Property Name="DATE_BOOKING" Type="date" />
+    <Property Name="STATUS" Type="bit" />
+  </EntityType>
+  <EntityType Name="CLIENTS">
+    <Key>
+      <PropertyRef Name="CLIENT_ID" />
+    </Key>
+    <Property Name="CLIENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIO" Type="nvarchar(max)" />
+    <Property Name="PASSPORT_SERIA" Type="int" />
+    <Property Name="PASSPORT_NUMBER" Type="int" />
+    <Property Name="NUMBER" Type="bigint" />
+    <Property Name="DATE_BIRTHDAY" Type="date" />
+    <Property Name="MALE" Type="bit" />
+    <Property Name="LOGIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+    <Property Name="ROLE_ID" Type="bit" />
+    <Property Name="FriendlyName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ROUTE">
+    <Key>
+      <PropertyRef Name="ROUTE_ID" />
+    </Key>
+    <Property Name="ROUTE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMPANY_ID" Type="int" />
+    <Property Name="TRANSPORT_ID" Type="int" />
+    <Property Name="WHERE_ON" Type="nvarchar(max)" />
+    <Property Name="WHERE_OF" Type="nvarchar(max)" />
+    <Property Name="DATE_ON" Type="date" />
+    <Property Name="DATE_OFF" Type="date" />
+    <Property Name="TIME_ROUTE" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TRANSPORT">
+    <Key>
+      <PropertyRef Name="TRANSPORT_ID" />
+    </Key>
+    <Property Name="TRANSPORT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE_TRANSPORT" Type="bit" />
+    <Property Name="NUM_SEATS" Type="int" />
+    <Property Name="NAME_TRANSPORT" Type="nvarchar(max)" />
+    <Property Name="COMPANY_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="TRAVEK_COMPANY">
+    <Key>
+      <PropertyRef Name="COMPANY_ID" />
+    </Key>
+    <Property Name="COMPANY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE_COMPANY" Type="int" />
+    <Property Name="NAME_COMPANY" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LOGIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+    <Property Name="ROLE_ID" Type="bit" />
+    <Property Name="FriendlyName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_BOOKING_CLIENTS">
+    <End Role="CLIENTS" Type="Self.CLIENTS" Multiplicity="0..1" />
+    <End Role="BOOKING" Type="Self.BOOKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTS">
+        <PropertyRef Name="CLIENT_ID" />
+      </Principal>
+      <Dependent Role="BOOKING">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BOOKING_ROUTE">
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="0..1" />
+    <End Role="BOOKING" Type="Self.BOOKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROUTE">
+        <PropertyRef Name="ROUTE_ID" />
+      </Principal>
+      <Dependent Role="BOOKING">
+        <PropertyRef Name="ROUTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BOOKING_TRAVEK_COMPANY">
+    <End Role="TRAVEK_COMPANY" Type="Self.TRAVEK_COMPANY" Multiplicity="0..1" />
+    <End Role="BOOKING" Type="Self.BOOKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRAVEK_COMPANY">
+        <PropertyRef Name="COMPANY_ID" />
+      </Principal>
+      <Dependent Role="BOOKING">
+        <PropertyRef Name="COMPANY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROUTE_TRANSPORT">
+    <End Role="TRANSPORT" Type="Self.TRANSPORT" Multiplicity="0..1" />
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANSPORT">
+        <PropertyRef Name="TRANSPORT_ID" />
+      </Principal>
+      <Dependent Role="ROUTE">
+        <PropertyRef Name="TRANSPORT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROUTE_TRAVEK_COMPANY">
+    <End Role="TRAVEK_COMPANY" Type="Self.TRAVEK_COMPANY" Multiplicity="0..1" />
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRAVEK_COMPANY">
+        <PropertyRef Name="COMPANY_ID" />
+      </Principal>
+      <Dependent Role="ROUTE">
+        <PropertyRef Name="COMPANY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRANSPORT_TRAVEK_COMPANY">
+    <End Role="TRAVEK_COMPANY" Type="Self.TRAVEK_COMPANY" Multiplicity="0..1" />
+    <End Role="TRANSPORT" Type="Self.TRANSPORT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRAVEK_COMPANY">
+        <PropertyRef Name="COMPANY_ID" />
+      </Principal>
+      <Dependent Role="TRANSPORT">
+        <PropertyRef Name="COMPANY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Хранилище BookingModelContainer">
+    <EntitySet Name="BOOKING" EntityType="Self.BOOKING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENTS" EntityType="Self.CLIENTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROUTE" EntityType="Self.ROUTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRANSPORT" EntityType="Self.TRANSPORT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRAVEK_COMPANY" EntityType="Self.TRAVEK_COMPANY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BOOKING_CLIENTS" Association="Self.FK_BOOKING_CLIENTS">
+      <End Role="CLIENTS" EntitySet="CLIENTS" />
+      <End Role="BOOKING" EntitySet="BOOKING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BOOKING_ROUTE" Association="Self.FK_BOOKING_ROUTE">
+      <End Role="ROUTE" EntitySet="ROUTE" />
+      <End Role="BOOKING" EntitySet="BOOKING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BOOKING_TRAVEK_COMPANY" Association="Self.FK_BOOKING_TRAVEK_COMPANY">
+      <End Role="TRAVEK_COMPANY" EntitySet="TRAVEK_COMPANY" />
+      <End Role="BOOKING" EntitySet="BOOKING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROUTE_TRANSPORT" Association="Self.FK_ROUTE_TRANSPORT">
+      <End Role="TRANSPORT" EntitySet="TRANSPORT" />
+      <End Role="ROUTE" EntitySet="ROUTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROUTE_TRAVEK_COMPANY" Association="Self.FK_ROUTE_TRAVEK_COMPANY">
+      <End Role="TRAVEK_COMPANY" EntitySet="TRAVEK_COMPANY" />
+      <End Role="ROUTE" EntitySet="ROUTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRANSPORT_TRAVEK_COMPANY" Association="Self.FK_TRANSPORT_TRAVEK_COMPANY">
+      <End Role="TRAVEK_COMPANY" EntitySet="TRAVEK_COMPANY" />
+      <End Role="TRANSPORT" EntitySet="TRANSPORT" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

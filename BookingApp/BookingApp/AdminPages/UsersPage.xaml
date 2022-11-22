@@ -1,0 +1,110 @@
+<Page x:Class="BookingApp.AdminPages.UsersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.AdminPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UsersPage" Loaded="Page_Loaded">
+
+  <Grid Background="#0c73fe">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition x:Name="ColumnChange" Width="0"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Label Content="Пользователи" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="26" FontWeight="Bold" Foreground="#fafafa" Margin="10, 0, 0, 0" HorizontalAlignment="Center"/>
+    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" VerticalAlignment="Center">
+      <Button x:Name="RecordAdd" Content="Добавить" 
+                    Style="{StaticResource PrimeButton}" Margin="5,0,0,5"
+                    Click="RecordAdd_Click"/>
+      <Button x:Name="RecordCopy" Content="Копировать" 
+                    Style="{StaticResource PrimeButton}" Margin="5,0,0,5"
+                    Click="RecordkCopy_Click"/>
+      <Button x:Name="RecordEdit" Content="Изменить" 
+                    Style="{StaticResource PrimeButton}" Margin="5,0,0,5"
+                    Click="RecordEdit_Click"/>
+      <Button x:Name="RecordDellete" Content="Удалить" 
+                    Style="{StaticResource PrimeButton}" Margin="5,0,0,5"
+                    Click="RecordDelete_Click"/>
+      <Rectangle Width="3" Height="30" Fill="#fafafa" Margin="20, 0, 20, 0"></Rectangle>
+      <ComboBox x:Name="FilterComboBox" Width="150" Height="30" />
+      <TextBox x:Name="FilterTextBox" Margin="5,0,5,0" Width="170" Height="30" TextChanged="FilterTextBox_TextChanged"/>
+    </StackPanel>
+
+    <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical">
+
+      <Label x:Name="RecordLabel" Content="Добавить Запись" FontSize="16" FontWeight="Medium" Margin="5,0,0,10" Foreground="#fafafa"/>
+
+      <Label Content="ФИО" Margin="5,0,0,0" Foreground="#fafafa"/>
+      <TextBox x:Name="RecordTextFIO" 
+                 Height="35" Margin="20,0,20,0"/>
+
+      <Label Content="Серия пасспорта" Margin="5,0,0,0" Foreground="#fafafa"/>
+      <TextBox x:Name="RecordTextPassSeria" 
+                 Height="35" Margin="20,0,20,0" MaxLength="4" TextChanged="TextBox_TextChanged"/>
+
+      <Label Content="Номер пасспорта" Margin="5,0,0,0" Foreground="#fafafa"/>
+      <TextBox x:Name="RecordTextPassNum" 
+                 Height="35" Margin="20,0,20,0" MaxLength="6" TextChanged="TextBox_TextChanged"/>
+
+      <Label Content="Номер телефона" Margin="5,0,0,0" Foreground="#fafafa"/>
+      <TextBox x:Name="RecordTextPhoneNum" 
+                 Height="35" Margin="20,0,20,0" MaxLength="11" TextChanged="TextBox_TextChanged"/>
+
+      <Label Content="Дата рождения" Margin="5,0,0,0" Foreground="#fafafa"/>
+      <DatePicker x:Name="CalendarBirtdayPicker" Height="35" Margin="20,0,20,0">
+        <DatePicker.Resources>
+          <Style TargetType="DatePickerTextBox">
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="Text" Value=" "/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="IsEnabled" Value="False" />
+            <Setter Property="IsHitTestVisible" Value="False"/>
+          </Style>
+        </DatePicker.Resources>
+      </DatePicker>
+
+      <Label Content="Пол" Margin="5,0,0,0" Foreground="#fafafa"/>
+      <ComboBox x:Name="TypeComboBoxMale" Height="35" Margin="20,0,20,0"/>
+
+      <Label Content="Тип пользователя" Margin="5,0,0,0" Foreground="#fafafa"/>
+      <ComboBox x:Name="TypeComboBoxRole" Height="35" Margin="20,0,20,0"/>
+
+      <Label Content="Логин" Margin="5,0,0,0" Foreground="#fafafa"/>
+      <TextBox x:Name="RecordTextLogin" 
+                 Height="35" Margin="20,0,20,0" MaxLength="18"/>
+
+      <Label Content="Пароль" Margin="5,0,0,0" Foreground="#fafafa"/>
+      <TextBox x:Name="RecordTextPassword" 
+                 Height="35" Margin="20,0,20,0" MaxLength="18"/>
+
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+        <Button x:Name="AddCommit" Content="Добавить запись" 
+                    Style="{StaticResource PrimeButton}" Margin="0, 5, 20, 0" Click="AddCommit_Click"/>
+        <Button x:Name="AddRollback" Content="Отменить" 
+                    Style="{StaticResource PrimeButton}" Margin="0, 5, 0, 0" Click="AddRollback_Click"/>
+      </StackPanel>
+
+    </StackPanel>
+
+    <DataGrid Grid.Row="2" Grid.Column="0" x:Name="PageGrid" AutoGenerateColumns="False" CanUserAddRows="False" >
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="ФИО" Binding="{Binding Path=FIO}" Width="10*"/>
+        <DataGridTextColumn Header="Серия пасспорта" Binding="{Binding Path=PASSPORT_SERIA}" Width="10*"/>
+        <DataGridTextColumn Header="Номер пасспорта" Binding="{Binding Path=PASSPORT_NUMBER}" Width="10*"/>
+        <DataGridTextColumn Header="Номер телефона" Binding="{Binding Path=NUMBER}" Width="10*"/>
+        <DataGridTextColumn Header="Дата рождения" Binding="{Binding Path=DATE_BIRTHDAY, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
+        <DataGridTextColumn Header="Пол" Binding="{Binding Path=MALE}" Width="10*"/>
+        <DataGridTextColumn Header="Тип пользователя" Binding="{Binding Path=ROLE_ID}" Width="10*"/>
+        <DataGridTextColumn Header="Логин" Binding="{Binding Path=LOGIN}" Width="10*"/>
+        <DataGridTextColumn Header="Пароль" Binding="{Binding Path=PASSWORD}" Width="10*"/>
+      </DataGrid.Columns>
+    </DataGrid>
+  </Grid>
+</Page>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище BookingModelContainer" CdmEntityContainer="BookingEntities1">
+    <EntitySetMapping Name="BOOKING">
+      <EntityTypeMapping TypeName="BookingModel.BOOKING">
+        <MappingFragment StoreEntitySet="BOOKING">
+          <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+          <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="DATE_BOOKING" ColumnName="DATE_BOOKING" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTS">
+      <EntityTypeMapping TypeName="BookingModel.CLIENTS">
+        <MappingFragment StoreEntitySet="CLIENTS">
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="PASSPORT_SERIA" ColumnName="PASSPORT_SERIA" />
+          <ScalarProperty Name="PASSPORT_NUMBER" ColumnName="PASSPORT_NUMBER" />
+          <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+          <ScalarProperty Name="DATE_BIRTHDAY" ColumnName="DATE_BIRTHDAY" />
+          <ScalarProperty Name="MALE" ColumnName="MALE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROUTE">
+      <EntityTypeMapping TypeName="BookingModel.ROUTE">
+        <MappingFragment StoreEntitySet="ROUTE">
+          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+          <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="TRANSPORT_ID" ColumnName="TRANSPORT_ID" />
+          <ScalarProperty Name="WHERE_ON" ColumnName="WHERE_ON" />
+          <ScalarProperty Name="WHERE_OF" ColumnName="WHERE_OF" />
+          <ScalarProperty Name="DATE_ON" ColumnName="DATE_ON" />
+          <ScalarProperty Name="DATE_OFF" ColumnName="DATE_OFF" />
+          <ScalarProperty Name="TIME_ROUTE" ColumnName="TIME_ROUTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BookingModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSPORT">
+      <EntityTypeMapping TypeName="BookingModel.TRANSPORT">
+        <MappingFragment StoreEntitySet="TRANSPORT">
+          <ScalarProperty Name="TRANSPORT_ID" ColumnName="TRANSPORT_ID" />
+          <ScalarProperty Name="TYPE_TRANSPORT" ColumnName="TYPE_TRANSPORT" />
+          <ScalarProperty Name="NUM_SEATS" ColumnName="NUM_SEATS" />
+          <ScalarProperty Name="NAME_TRANSPORT" ColumnName="NAME_TRANSPORT" />
+          <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRAVEK_COMPANY">
+      <EntityTypeMapping TypeName="BookingModel.TRAVEK_COMPANY">
+        <MappingFragment StoreEntitySet="TRAVEK_COMPANY">
+          <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="TYPE_COMPANY" ColumnName="TYPE_COMPANY" />
+          <ScalarProperty Name="NAME_COMPANY" ColumnName="NAME_COMPANY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="BookingModel.USERS">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
