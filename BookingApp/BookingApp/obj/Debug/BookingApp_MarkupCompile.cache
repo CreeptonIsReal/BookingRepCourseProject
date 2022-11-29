@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Kriptik\Desktop\Pakhomov_Igor\Pakhomov\BookingApp\BookingApp\obj\Debug\
+C:\Users\Kriptik\Desktop\Course\BookingApp\BookingApp\obj\Debug\
 BookingApp
 none
 false
 DEBUG;TRACE
-C:\Users\Kriptik\Desktop\Pakhomov_Igor\Pakhomov\BookingApp\BookingApp\App.xaml
+C:\Users\Kriptik\Desktop\Course\BookingApp\BookingApp\App.xaml
 9690132523
 42146051948
-31-1712072373
-18483266080
+321740535556
+181179083347
 AdminPages\TransportPage.xaml;AdminPages\TravekCompanyPage.xaml;AdminPages\UsersPage.xaml;AdminWindow.xaml;AuthorizationWindow.xaml;MainPages\PayWindow.xaml;MainPages\RoutePage.xaml;MainWindow.xaml;RegistrationWindow.xaml;
 
-False
+True
 
