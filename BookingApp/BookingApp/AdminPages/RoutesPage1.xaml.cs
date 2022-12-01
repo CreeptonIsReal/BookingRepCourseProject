@@ -28,6 +28,7 @@ namespace BookingApp.AdminPages
       UpdateGrid(null);
       DlgLoad(false, "");
       CalendarOnPicker.DisplayDateStart = DateTime.Today;
+      CalendarOffPicker.DisplayDateStart = CalendarOnPicker.SelectedDate;
     }
     private int DlgMode = 0;
     public Base.ROUTE SelectedItem;

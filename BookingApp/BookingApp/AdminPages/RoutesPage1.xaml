@@ -70,7 +70,7 @@
         </DatePicker.Resources>
       </DatePicker>
 
-      <Label Content="Дата туда" Margin="5,0,0,0" Foreground="#fafafa"/>
+      <Label Content="Дата обратно" Margin="5,0,0,0" Foreground="#fafafa"/>
       <DatePicker x:Name="CalendarOffPicker" Height="35" Margin="20,0,20,0">
         <DatePicker.Resources>
           <Style TargetType="DatePickerTextBox">
