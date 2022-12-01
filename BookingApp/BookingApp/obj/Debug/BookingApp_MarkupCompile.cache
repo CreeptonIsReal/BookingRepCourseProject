@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Kriptik\Desktop\Course\BookingApp\BookingApp\obj\Debug\
+C:\Users\Kriptik\Desktop\Учеба\Course\BookingApp\BookingApp\obj\Debug\
 BookingApp
 none
 false
 DEBUG;TRACE
-C:\Users\Kriptik\Desktop\Course\BookingApp\BookingApp\App.xaml
-9690132523
+C:\Users\Kriptik\Desktop\Учеба\Course\BookingApp\BookingApp\App.xaml
+11-849623911
 42146051948
-321740535556
-181179083347
-AdminPages\TransportPage.xaml;AdminPages\TravekCompanyPage.xaml;AdminPages\UsersPage.xaml;AdminWindow.xaml;AuthorizationWindow.xaml;MainPages\PayWindow.xaml;MainPages\RoutePage.xaml;MainWindow.xaml;RegistrationWindow.xaml;
+33-1642025879
+181278504676
+AdminPages\BookingsPage1.xaml;AdminPages\RoutesPage1.xaml;AdminPages\TransportPage.xaml;AdminPages\TravekCompanyPage.xaml;AdminPages\UsersPage.xaml;AdminWindow.xaml;AuthorizationWindow.xaml;MainPages\PayWindow.xaml;MainPages\RoutePage.xaml;MainWindow.xaml;RegistrationWindow.xaml;
 
-True
+False
 

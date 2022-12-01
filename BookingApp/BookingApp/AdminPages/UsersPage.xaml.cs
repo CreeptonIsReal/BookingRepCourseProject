@@ -219,7 +219,7 @@ namespace BookingApp.AdminPages
       if (string.IsNullOrEmpty(TypeComboBoxRole.Text))
         errors.AppendLine("Укажите тип пользователя");
 
-      if (string.IsNullOrEmpty(RecordTextPhoneNum.Text) || (RecordTextPhoneNum.Text.Length < 11))
+      if (string.IsNullOrEmpty(RecordTextPhoneNum.Text) || !ValidationClass.CheckNumberPhone(RecordTextPhoneNum.Text))
         errors.AppendLine("Укажите номер");
 
       if (string.IsNullOrEmpty(RecordTextPassNum.Text) || (RecordTextPassNum.Text.Length < 6))
@@ -228,7 +228,7 @@ namespace BookingApp.AdminPages
       if (string.IsNullOrEmpty(RecordTextPassSeria.Text) || (RecordTextPassSeria.Text.Length < 4))
         errors.AppendLine("Укажите серия пасспорта");
 
-      if (string.IsNullOrEmpty(RecordTextLogin.Text) || (RecordTextLogin.Text.Length < 6))
+      if (string.IsNullOrEmpty(RecordTextLogin.Text))
         errors.AppendLine("Укажите логин");
 
       if (!ValidationClass.CheckLoginExist(RecordTextLogin.Text))
@@ -236,7 +236,7 @@ namespace BookingApp.AdminPages
         errors.AppendLine("Такой логин уже существует");
       }
 
-      if (string.IsNullOrEmpty(RecordTextPassword.Text) || (RecordTextPassword.Text.Length < 6))
+      if (string.IsNullOrEmpty(RecordTextPassword.Text) || !ValidationClass.CheckPassword(RecordTextPassword.Text))
         errors.AppendLine("Укажите пароль");
 
       if (string.IsNullOrEmpty(CalendarBirtdayPicker.Text))

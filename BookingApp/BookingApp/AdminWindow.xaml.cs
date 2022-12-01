@@ -26,7 +26,7 @@ namespace BookingApp
 
     private void RouteButton_Click(object sender, RoutedEventArgs e)
     {
-      //RootFrame.Navigate(new AdminPages.MoviePage());
+      RootFrame.Navigate(new AdminPages.RoutesPage1());
     }
 
     private void CompanyButton_Click(object sender, RoutedEventArgs e)
@@ -36,7 +36,7 @@ namespace BookingApp
 
     private void BookingButton_Click(object sender, RoutedEventArgs e)
     {
-
+      RootFrame.Navigate(new AdminPages.BookingsPage1());
     }
 
     private void TransportButton_Click(object sender, RoutedEventArgs e)
