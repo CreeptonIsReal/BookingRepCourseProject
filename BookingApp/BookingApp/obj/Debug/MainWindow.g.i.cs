@@ -57,7 +57,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 38 "..\..\MainWindow.xaml"
+        #line 40 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel UserStackPanel;
         
@@ -65,7 +65,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 39 "..\..\MainWindow.xaml"
+        #line 41 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label UserNameLabel;
         
@@ -73,7 +73,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 40 "..\..\MainWindow.xaml"
+        #line 42 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button AdminPanelButton;
         
@@ -81,7 +81,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 48 "..\..\MainWindow.xaml"
+        #line 50 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel SelectLabelStackPanel;
         
@@ -89,7 +89,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 66 "..\..\MainWindow.xaml"
+        #line 68 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox WhereOn_Text;
         
@@ -97,7 +97,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 67 "..\..\MainWindow.xaml"
+        #line 69 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox WhereOf_Text;
         
@@ -105,7 +105,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 69 "..\..\MainWindow.xaml"
+        #line 71 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Passager_Text;
         
@@ -113,7 +113,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 70 "..\..\MainWindow.xaml"
+        #line 72 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button SearchTicketButton;
         
@@ -121,7 +121,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 73 "..\..\MainWindow.xaml"
+        #line 76 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Frame RootFrame;
         
@@ -166,7 +166,7 @@ namespace BookingApp {
             return;
             case 3:
             
-            #line 34 "..\..\MainWindow.xaml"
+            #line 35 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Login_Click);
             
             #line default
@@ -174,7 +174,7 @@ namespace BookingApp {
             return;
             case 4:
             
-            #line 35 "..\..\MainWindow.xaml"
+            #line 37 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Sign_Click);
             
             #line default
@@ -189,7 +189,7 @@ namespace BookingApp {
             case 7:
             this.AdminPanelButton = ((System.Windows.Controls.Button)(target));
             
-            #line 41 "..\..\MainWindow.xaml"
+            #line 43 "..\..\MainWindow.xaml"
             this.AdminPanelButton.Click += new System.Windows.RoutedEventHandler(this.AdminPanel_Click);
             
             #line default
@@ -197,7 +197,7 @@ namespace BookingApp {
             return;
             case 8:
             
-            #line 42 "..\..\MainWindow.xaml"
+            #line 44 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Exit_Click);
             
             #line default
@@ -209,7 +209,7 @@ namespace BookingApp {
             case 10:
             this.WhereOn_Text = ((System.Windows.Controls.TextBox)(target));
             
-            #line 66 "..\..\MainWindow.xaml"
+            #line 68 "..\..\MainWindow.xaml"
             this.WhereOn_Text.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.WhereOn_Text_TextChanged);
             
             #line default
@@ -218,7 +218,7 @@ namespace BookingApp {
             case 11:
             this.WhereOf_Text = ((System.Windows.Controls.TextBox)(target));
             
-            #line 67 "..\..\MainWindow.xaml"
+            #line 69 "..\..\MainWindow.xaml"
             this.WhereOf_Text.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.WhereOf_Text_TextChanged);
             
             #line default
@@ -227,13 +227,13 @@ namespace BookingApp {
             case 12:
             this.Passager_Text = ((System.Windows.Controls.TextBox)(target));
             
-            #line 69 "..\..\MainWindow.xaml"
+            #line 71 "..\..\MainWindow.xaml"
             this.Passager_Text.LostFocus += new System.Windows.RoutedEventHandler(this.Passager_Text_LostFocus);
             
             #line default
             #line hidden
             
-            #line 69 "..\..\MainWindow.xaml"
+            #line 71 "..\..\MainWindow.xaml"
             this.Passager_Text.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.TextBox_TextChanged);
             
             #line default
@@ -242,7 +242,7 @@ namespace BookingApp {
             case 13:
             this.SearchTicketButton = ((System.Windows.Controls.Button)(target));
             
-            #line 70 "..\..\MainWindow.xaml"
+            #line 72 "..\..\MainWindow.xaml"
             this.SearchTicketButton.Click += new System.Windows.RoutedEventHandler(this.SearchTicketButton_Click);
             
             #line default

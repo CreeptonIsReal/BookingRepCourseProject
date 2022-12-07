@@ -14,11 +14,11 @@ namespace BookingApp
       return SourceCore.MyBase.CLIENTS.FirstOrDefault(lg => lg.LOGIN == login) == null;
     }
 
-    public static bool CheckNumberPhone(string phone)
+    public static bool CheckPhoneNumber(string phoneNumber)
     {
       string pattern = @"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$";
       Regex regex = new Regex(pattern);
-      return regex.IsMatch(phone);
+      return regex.IsMatch(phoneNumber);
     }
 
     public static bool CheckPassword(string password)

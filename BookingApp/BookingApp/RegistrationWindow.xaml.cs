@@ -74,12 +74,7 @@ namespace BookingApp
 
     private void OkButton_Click(object sender, RoutedEventArgs e)
     {
-
-      if (!ValidationClass.CheckPassword(PasswordPasswordBox.Password) || !ValidationClass.CheckNumberPhone(NumberTextBox.Text))
-      {
-        MessageBox.Show("Проблемы с паролем или логином", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
-      }
-      else if (! ValidationClass.CheckLoginExist(LoginTextBox.Text))
+      if (! ValidationClass.CheckLoginExist(LoginTextBox.Text))
       {
         MessageBox.Show("Такой логин уже существует", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
       }
@@ -102,6 +97,13 @@ namespace BookingApp
 
           if (string.IsNullOrEmpty(NumberTextBox.Text) || NumberTextBox.Text.Length < 6)
             errors.AppendLine("Укажите ваш номер!");
+
+          if (!ValidationClass.CheckPassword(PasswordPasswordBox.Password))
+            errors.AppendLine("Пароль имеет неверный формат!");
+
+          if (!ValidationClass.CheckPhoneNumber(NumberTextBox.Text))
+            errors.AppendLine("Номер имеет неверный формат!");
+
 
           if (errors.Length > 0)
           {

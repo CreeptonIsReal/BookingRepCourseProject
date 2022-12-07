@@ -219,7 +219,7 @@ namespace BookingApp.AdminPages
       if (string.IsNullOrEmpty(TypeComboBoxRole.Text))
         errors.AppendLine("Укажите тип пользователя");
 
-      if (string.IsNullOrEmpty(RecordTextPhoneNum.Text) || !ValidationClass.CheckNumberPhone(RecordTextPhoneNum.Text))
+      if (string.IsNullOrEmpty(RecordTextPhoneNum.Text) || !ValidationClass.CheckPhoneNumber(RecordTextPhoneNum.Text))
         errors.AppendLine("Укажите номер");
 
       if (string.IsNullOrEmpty(RecordTextPassNum.Text) || (RecordTextPassNum.Text.Length < 6))

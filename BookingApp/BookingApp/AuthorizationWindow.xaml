@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BookingApp"
         mc:Ignorable="d"
         AllowsTransparency="False"  WindowStyle="ThreeDBorderWindow"
-        Title="AuthorizationWindow" Height="400" Width="500" Background="Transparent" WindowStartupLocation="CenterScreen">
+        Title="Авторизация" Height="400" Width="500" Background="Transparent" WindowStartupLocation="CenterScreen">
   <Grid x:Name="MainGrid">
     <!--<Image Source="/Pictures/Lib2.jpg" Grid.Column="0"/>-->
     <Border Width="auto" Height="auto" BorderBrush="White" BorderThickness="2">
