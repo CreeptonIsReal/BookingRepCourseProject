@@ -57,7 +57,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 46 "..\..\AuthorizationWindow.xaml"
+        #line 45 "..\..\AuthorizationWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label LoginLabel;
         
@@ -65,7 +65,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 48 "..\..\AuthorizationWindow.xaml"
+        #line 46 "..\..\AuthorizationWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox LoginText;
         
@@ -73,7 +73,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 50 "..\..\AuthorizationWindow.xaml"
+        #line 47 "..\..\AuthorizationWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label PasswordLabel;
         
@@ -81,7 +81,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 52 "..\..\AuthorizationWindow.xaml"
+        #line 48 "..\..\AuthorizationWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox PasswordText;
         
@@ -89,7 +89,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 57 "..\..\AuthorizationWindow.xaml"
+        #line 52 "..\..\AuthorizationWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button AuthorizationCommit;
         
@@ -97,7 +97,7 @@ namespace BookingApp {
         #line hidden
         
         
-        #line 60 "..\..\AuthorizationWindow.xaml"
+        #line 55 "..\..\AuthorizationWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button AboutButton;
         
@@ -155,7 +155,7 @@ namespace BookingApp {
             case 7:
             this.AuthorizationCommit = ((System.Windows.Controls.Button)(target));
             
-            #line 57 "..\..\AuthorizationWindow.xaml"
+            #line 52 "..\..\AuthorizationWindow.xaml"
             this.AuthorizationCommit.Click += new System.Windows.RoutedEventHandler(this.AuthorizationCommit_Click);
             
             #line default
@@ -164,7 +164,7 @@ namespace BookingApp {
             case 8:
             this.AboutButton = ((System.Windows.Controls.Button)(target));
             
-            #line 61 "..\..\AuthorizationWindow.xaml"
+            #line 56 "..\..\AuthorizationWindow.xaml"
             this.AboutButton.Click += new System.Windows.RoutedEventHandler(this.AuthorizationRollBack_Click);
             
             #line default

@@ -9,7 +9,7 @@
       Title="RoutePage">
 
   <Grid>
-    <DataGrid Grid.Row="2" Grid.Column="0" x:Name="PageGrid" AutoGenerateColumns="False" CanUserAddRows="False" Height="450" BorderBrush="#0c73fe" Background="#FF0C91FE" FontFamily="Bodoni MT" IsReadOnly="True" >
+    <DataGrid Grid.Row="2" Grid.Column="0" x:Name="PageGrid" AutoGenerateColumns="False" CanUserAddRows="False" Height="450" BorderBrush="#0c73fe" Background="#FF0C91FE" FontFamily="Arial Rounded MT Bold" IsReadOnly="True" >
       <DataGrid.Columns>
         <DataGridTextColumn Header="Название компании" Binding="{Binding Path=CompanyName}" Width="10*"/>
         <DataGridTextColumn Header="Название транспорта" Binding="{Binding Path=TransportName}" Width="10*"/>

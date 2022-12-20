@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BookingApp"
         mc:Ignorable="d"
         AllowsTransparency="False"  WindowStyle="ThreeDBorderWindow"
-        Title="AdminWindow" Height="840" Width="1000" Background="Transparent" WindowStartupLocation="CenterScreen" MinHeight="840" MinWidth="1000">
+        Title="Панель администратора" Height="840" Width="1000" Background="Transparent" WindowStartupLocation="CenterScreen" MinHeight="840" MinWidth="1000">
   <Grid x:Name="MainGrid">
     <Border Width="auto" Height="auto" BorderBrush="White" BorderThickness="2">
       <Border.Background>

@@ -29,17 +29,10 @@ namespace BookingApp.MainPages
     private void AuthorizationCommit_Click(object sender, RoutedEventArgs e)
     {
       StringBuilder errors = new StringBuilder();
-      if (string.IsNullOrEmpty(NameCardText.Text))
-        errors.AppendLine("Укажите имя");
-
       if (string.IsNullOrEmpty(NumCardText.Text))
-        errors.AppendLine("Укажите номер карты");
+        errors.AppendLine("Укажите номер счета");
 
-      if (string.IsNullOrEmpty(CardDateText.Text))
-        errors.AppendLine("Укажите дату");
 
-      if (string.IsNullOrEmpty(CardCVCText.Text))
-        errors.AppendLine("Укажите CVC код");
 
       if (errors.Length > 0)
       {

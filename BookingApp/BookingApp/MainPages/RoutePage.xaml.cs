@@ -131,49 +131,54 @@ namespace BookingApp.MainPages
     }
 
 
+    private void BookingAdd()
+    {
+      SelectedItemRouteClass = (BookingD)PageGrid.SelectedItem;
+      if (SelectedItemRouteClass.CountSeatsFreeOneRoute > MainWindow.CountPass)
+      {
+        var NewBase = new Base.BOOKING();
+        NewBase.CLIENT_ID = MainWindow.Client.CLIENT_ID;
+        NewBase.ROUTE_ID = SelectedItemRouteClass.IdRoute;
+        NewBase.COMPANY_ID = SelectedItemRouteClass.IdCompany;
+        NewBase.DATE_BOOKING = DateTime.Today;
+        NewBase.COUNT_SEATS = SelectedItemRouteClass.CountSeats;
+        MoneyOf = (double)SelectedItemRouteClass.Price * MainWindow.CountPass;
+        SelectedWindow.ChangePage("PayWindow");
+
+        if (PayWindow.PayValid)
+        {
+          NewBase.STATUS = true;
+        }
+        else
+        {
+          NewBase.STATUS = false;
+        }
+        SourceCore.MyBase.BOOKING.Add(NewBase);
+        SelectedItemBooking = NewBase;
+      }
+      else
+      {
+        MessageBox.Show("Не осталось свободных мест для " + MainWindow.CountPass + " человек", "Сообщение", MessageBoxButton.OK);
+      }
+
+      try
+      {
+        SourceCore.MyBase.SaveChanges();
+        UpdateGridS(SelectedItem);
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message.ToString());
+      }
+    }
+
     private void BookingButton_Click(object sender, RoutedEventArgs e)
     {
       if (MainWindow.Client != null)
       {
-        if (PageGrid.SelectedItem != null )
+        if (PageGrid.SelectedItem != null)
         {
-          SelectedItemRouteClass = (BookingD)PageGrid.SelectedItem;
-          if (SelectedItemRouteClass.CountSeatsFreeOneRoute > MainWindow.CountPass)
-          {
-            var NewBase = new Base.BOOKING();
-            NewBase.CLIENT_ID = MainWindow.Client.CLIENT_ID;
-            NewBase.ROUTE_ID = SelectedItemRouteClass.IdRoute;
-            NewBase.COMPANY_ID = SelectedItemRouteClass.IdCompany;
-            NewBase.DATE_BOOKING = DateTime.Today;
-            NewBase.COUNT_SEATS = SelectedItemRouteClass.CountSeats;
-            MoneyOf = (double)SelectedItemRouteClass.Price * MainWindow.CountPass;
-            SelectedWindow.ChangePage("PayWindow");
-
-            if (PayWindow.PayValid)
-            {
-              NewBase.STATUS = true;
-            }
-            else
-            {
-              NewBase.STATUS = false;
-            }
-            SourceCore.MyBase.BOOKING.Add(NewBase);
-            SelectedItemBooking = NewBase;
-          }
-          else
-          {
-            MessageBox.Show("Не осталось свободных мест для " + MainWindow.CountPass + " человек", "Сообщение", MessageBoxButton.OK);
-          }
-
-          try
-          {
-            SourceCore.MyBase.SaveChanges();
-            UpdateGridS(SelectedItem);
-          }
-          catch (Exception ex)
-          {
-            MessageBox.Show(ex.Message.ToString());
-          }
+          BookingAdd();
         }
         else
         {

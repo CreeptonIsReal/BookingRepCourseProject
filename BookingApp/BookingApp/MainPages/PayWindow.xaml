@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookingApp.MainPages"
         mc:Ignorable="d"
-        AllowsTransparency="False"  WindowStyle="ThreeDBorderWindow"
-        Title="AuthorizationWindow" Height="350" Width="550" Background="Transparent" WindowStartupLocation="CenterScreen">
+        AllowsTransparency="False"  WindowStyle="ThreeDBorderWindow" MinWidth="550" MinHeight="350"
+        Title="Оплата" Height="350" Width="550" Background="Transparent" WindowStartupLocation="CenterScreen">
   <Grid x:Name="MainGrid">
     <!--<Image Source="/Pictures/Lib2.jpg" Grid.Column="0"/>-->
     <Border Width="auto" Height="auto" BorderBrush="White" BorderThickness="2">
@@ -35,25 +35,11 @@
           <RowDefinition Height="50"/>
           <RowDefinition Height="50"/>
           <RowDefinition Height="50"/>
-          <RowDefinition Height="50"/>
-          <RowDefinition Height="50"/>
-          <RowDefinition Height="50"/>
-          <RowDefinition Height="50"/>
-          <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Label x:Name="PayLabel" Margin="5,5,5,5" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" Foreground="White" HorizontalAlignment="Center" Style="{StaticResource Logo}" >Оплата</Label>
-        <Label x:Name="NameCardLabel" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" Foreground="White" FontSize="12" HorizontalAlignment="Left" FontWeight="Bold">Имя на карте</Label>
-
-        <TextBox x:Name="NameCardText" Margin="100,5,5,5" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" Style="{StaticResource BordText}"/>
-        <Label x:Name="NumCardLabel" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" Foreground="White" FontSize="12" HorizontalAlignment="Left" FontWeight="Bold">Номер карты</Label>
+        <Label x:Name="NumCardLabel" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" Foreground="White" FontSize="12" HorizontalAlignment="Left" FontWeight="Bold">Номер счета</Label>
         <TextBox x:Name="NumCardText" Margin="100,5,5,5" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" Style="{StaticResource BordText}" TextChanged="TextBox_TextChanged" MaxLength="16"/>
-
-        <Label x:Name="CardNumAndDateLabel" Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Center" Foreground="White" FontSize="12" HorizontalAlignment="Left" FontWeight="Bold">Дата и CVC</Label>
-        <TextBox x:Name="CardDateText" Margin="100,5,230,5" Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Center" Style="{StaticResource BordText}"/>
-        <Label Content="|"  FontSize="16" FontWeight="Bold"  VerticalContentAlignment="Center"
-                           Foreground="#fafafa"  Grid.Column="1" Grid.Row="3" Margin="270,0,170,0"/>
-        <TextBox x:Name="CardCVCText" Margin="325,5,5,5" Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Center" Style="{StaticResource BordText}" TextChanged="TextBox_TextChanged" MaxLength="3"/>
-        <StackPanel Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
 
           <Button x:Name="AuthorizationCommit" Content="Оплатить" Background="#339900"  Cursor="Hand"  Height="35" Width="120" Margin="15,0,15,0" Style="{StaticResource PrimeButton}" Click="AuthorizationCommit_Click" />
           <Label Content="|"  FontSize="16" FontWeight="Bold"  VerticalContentAlignment="Center"
