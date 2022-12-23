@@ -38,7 +38,7 @@ namespace BookingApp.AdminPages
     private void Page_Loaded(object sender, RoutedEventArgs e)
     {
       List<string> Columns = new List<string>();
-      for (int i = 0; i < 2; i++)
+      for (int i = 0; i < 3; i++)
       {
         Columns.Add(PageGrid.Columns[i].Header.ToString());
       }
@@ -160,9 +160,12 @@ namespace BookingApp.AdminPages
       switch (FilterComboBox.SelectedIndex)
       {
         case 0:
-          PageGrid.ItemsSource = SourceCore.MyBase.TRAVEK_COMPANY.Where(q => q.NAME_COMPANY.Contains(textbox.Text)).ToList();
+          PageGrid.ItemsSource = SourceCore.MyBase.TRAVEK_COMPANY.Where(q => q.COMPANY_ID.ToString().Contains(textbox.Text)).ToList();
           break;
         case 1:
+          PageGrid.ItemsSource = SourceCore.MyBase.TRAVEK_COMPANY.Where(q => q.NAME_COMPANY.Contains(textbox.Text)).ToList();
+          break;
+        case 2:
           PageGrid.ItemsSource = SourceCore.MyBase.TRAVEK_COMPANY.Where(q => q.TYPE_COMPANY.ToString().Contains(textbox.Text)).ToList();
           break;
       }

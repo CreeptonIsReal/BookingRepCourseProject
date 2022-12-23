@@ -38,7 +38,7 @@ namespace BookingApp.AdminPages
     private void Page_Loaded(object sender, RoutedEventArgs e)
     {
       List<string> Columns = new List<string>();
-      for (int i = 0; i < 4; i++)
+      for (int i = 0; i < 5; i++)
       {
         Columns.Add(PageGrid.Columns[i].Header.ToString());
       }
@@ -168,15 +168,18 @@ namespace BookingApp.AdminPages
       switch (FilterComboBox.SelectedIndex)
       {
         case 0:
-          PageGrid.ItemsSource = SourceCore.MyBase.TRANSPORT.Where(q => q.TYPE_TRANSPORT.ToString().Contains(textbox.Text)).ToList();
+          PageGrid.ItemsSource = SourceCore.MyBase.TRANSPORT.Where(q => q.TRANSPORT_ID.ToString().Contains(textbox.Text)).ToList();
           break;
         case 1:
-          PageGrid.ItemsSource = SourceCore.MyBase.TRANSPORT.Where(q => q.NUM_SEATS.ToString().Contains(textbox.Text)).ToList();
+          PageGrid.ItemsSource = SourceCore.MyBase.TRANSPORT.Where(q => q.TYPE_TRANSPORT.ToString().Contains(textbox.Text)).ToList();
           break;
         case 2:
-          PageGrid.ItemsSource = SourceCore.MyBase.TRANSPORT.Where(q => q.COMPANY_ID.ToString().Contains(textbox.Text)).ToList();
+          PageGrid.ItemsSource = SourceCore.MyBase.TRANSPORT.Where(q => q.NUM_SEATS.ToString().Contains(textbox.Text)).ToList();
           break;
         case 3:
+          PageGrid.ItemsSource = SourceCore.MyBase.TRANSPORT.Where(q => q.COMPANY_ID.ToString().Contains(textbox.Text)).ToList();
+          break;
+        case 4:
           PageGrid.ItemsSource = SourceCore.MyBase.TRANSPORT.Where(q => q.NAME_TRANSPORT.Contains(textbox.Text)).ToList();
           break;
       }
